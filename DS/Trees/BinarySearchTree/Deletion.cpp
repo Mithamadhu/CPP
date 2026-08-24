@@ -4,7 +4,6 @@
 #include <queue>
 using namespace std;
 
-// Node structure
 class Node {
 public:
     int data;
@@ -16,15 +15,11 @@ public:
         left = right = nullptr;
     }
 };
-
-// Calculate Height
 int getHeight(Node* root, int h) {
     if (root == nullptr) return h - 1;
     return max(getHeight(root->left, h + 1), 
                       getHeight(root->right, h + 1));
 }
-
-// Print Level Order
 void levelOrder(Node* root) {
     queue<pair<Node*, int>> q;
     q.push({root, 0});
